@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Twitter</title>
+
+  <style type="text/css">
+   
+   body{
+    background-color: #F5F8FA;
+    margin: 0px;
+    padding: 0px;
+
+    
+   } 
+  .tweet{
+    border: 2px solid #fff;
+    width: 1000px;
+    margin: 25px auto;
+    padding: 10px;
+    background-color: #fff;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+  }
+
+  .search{
+    width: 60%;
+    margin: 25px auto;
+  }
+
+  .box{
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+   .btn{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1DA1F2;
+    color: #fff;
+  }
+
+  .btn:hover{
+    cursor: pointer;
+  }
+
+  header h1{
+    background-color: #1DA1F2;
+    color: #fff;
+    margin-top: 0px;
+    padding: 15px;
+  }
+
+  </style>
+	
+</head>
+<body ng-controller="myCtrl">
+
+<header>
+  <h1>Twitter</h1>
+</header>
+
+<div class="search">
+<input type="text" ng-model="search.name" name="search" class="box" placeholder="Search for latest tweets..!!">
+<input type="button" name="submit" ng-click="subsearch()" class="btn" value="search">
+</div>
+
+
+
+<div ng-repeat='x in twit' class="tweet">
+<h1>{{x.user.name}}</h1>
+<p>{{x.text}}</p>
+  
+</div>
+
+<!-- {{tweet.text}} -->
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script type="text/javascript" src="controller/controller.js"></script>
+</body>
+</html>
